@@ -6,20 +6,7 @@ The algorithm is useful for obfuscating 32-bit integers, such as database IDs, t
 
 ## Usage
 
-Either download and compile it yourself from source, or use this in your pom.xml:
 
-    <dependency>
-      <groupId>com.boivie</groupId>
-      <artifactId>skip32</artifactId>
-      <version>1.0</version>
-    </dependency>
-
-Your java code will look something like:
-
-    import com.boivie.skip32.Skip32
-    
-    ...
-    
     byte[] key = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, (byte) 0x88,
                    (byte) 0x99, (byte) 0xAA };
 
@@ -28,14 +15,3 @@ Your java code will look something like:
     int c = Skip32.encrypt(id, key);
     int p = Skip32.decrypt(c, key);
     
-    Assert.assertEquals(id, p);
-
-## Author
-
-This code is written (or well, mostly translated from the original source) by Victor Boivie, <victor@boivie.com>.
-
-## License
-
-This code is distributed under the New BSD License. Please see the LICENSE file for full details.
-
-
